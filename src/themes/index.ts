@@ -27,6 +27,7 @@ const themes = {
 StyleSheet.configure({
   settings: {
     initialTheme: 'lightTheme',
+    adaptiveThemes: true,
   },
   themes: themes,
 });

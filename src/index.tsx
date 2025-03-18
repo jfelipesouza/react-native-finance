@@ -31,7 +31,6 @@ const MyApp: React.FC = () => {
   if (auth) {
     return <view />;
   }
-
   return (
     <NavigationContainer>
       <EntryRouter />

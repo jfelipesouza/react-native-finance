@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {ScreenWrapper} from '../../components/ui/screen-wrapper';
-import {theme} from '../../themes';
 
 export const LoginScreen = () => {
   return (
@@ -18,7 +17,6 @@ export const LoginScreen = () => {
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    paddingHorizontal: theme.spacing.sm,
   },
   backButton: {
     padding: 2,
