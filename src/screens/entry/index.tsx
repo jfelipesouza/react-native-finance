@@ -1,8 +1,9 @@
 import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
-import {ScreenWrapper} from '../../components/ui/screen-wrapper';
 import {Text, TouchableOpacity} from 'react-native';
+
+import {ScreenWrapper} from '@/components/ui/screen-wrapper';
 
 export const NoAuthEntryScreen = () => {
   const navigation = useNavigation();
