@@ -1,4 +1,6 @@
-const colors = {
+import {ThemeColors} from './theme';
+
+const colors: ThemeColors = {
   bg_container: '#fff',
   primary: '#a3e635',
   primaryLight: '#0ea5e9',

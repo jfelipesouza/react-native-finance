@@ -1,15 +1,17 @@
-const colors = {
+import {ThemeColors} from './theme';
+
+const colors: ThemeColors = {
   bg_container: '#ffffff',
-  primary: '#65a30d', // Ajustado para um verde mais escuro e equilibrado
-  primaryLight: '#0284c7', // Ajustado para um azul mais claro e vibrante
-  primaryDark: '#075985', // Azul escuro mais equilibrado
+  primary: '#65a30d',
+  primaryLight: '#0284c7',
+  primaryDark: '#075985',
   text: '#000000',
   textLight: '#404040',
   textLighter: '#525252',
   white: '#ffffff',
   black: '#000000',
-  rose: '#dc2626', // Ajustado para um tom mais sóbrio de vermelho
-  green: '#15803d', // Verde escuro mais natural
+  rose: '#dc2626',
+  green: '#15803d',
   neutral50: '#f8fafc',
   neutral100: '#f1f5f9',
   neutral200: '#e2e8f0',

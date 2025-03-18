@@ -10,7 +10,7 @@ const percentScreen = (value: number) =>
 
 const spacing = {
   sm: percentScreen(1.75),
-  status_bar: status_bar ? status_bar : 12,
+  status_bar: status_bar ? status_bar : 20,
 };
 
 const fontSize = {
