@@ -1,6 +1,6 @@
-import {theme} from './index';
+import {themes} from './index';
 
-type AppThemes = typeof theme;
+type AppThemes = typeof themes;
 
 export type ThemeColors = {
   bg_container: string;

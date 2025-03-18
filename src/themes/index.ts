@@ -1,14 +1,13 @@
+import {StyleSheet} from 'react-native-unistyles';
+
 import {fonts} from './unistyles/themes/fonts';
 import {DarkColors, DefaultColors} from './unistyles/themes/colors';
 import {spacing} from './unistyles/themes/spacing';
 
-// Configuração padrão dos temas
 const themeSettings = {
   spacing,
   fonts,
 };
-
-// Montagem de tema
 
 const lightTheme = {
   colors: DefaultColors,
@@ -20,9 +19,16 @@ const darkTheme = {
   ...themeSettings,
 };
 
-const theme = {
+const themes = {
   lightTheme,
   darkTheme,
 };
 
-export {theme};
+StyleSheet.configure({
+  settings: {
+    initialTheme: 'lightTheme',
+  },
+  themes: themes,
+});
+
+export {themes};
