@@ -1,29 +1,14 @@
-import {StatusBar, Dimensions, PixelRatio} from 'react-native';
-import {colors as DefaultColors} from './default';
-import {colors as DarkColors} from './dark';
+import {fonts} from './unistyles/themes/fonts';
+import {DarkColors, DefaultColors} from './unistyles/themes/colors';
+import {spacing} from './unistyles/themes/spacing';
 
-const status_bar = StatusBar.currentHeight;
-const {height} = Dimensions.get('window');
-
-const percentScreen = (value: number) =>
-  Math.round(PixelRatio.roundToNearestPixel((value * height) / 100));
-
-const spacing = {
-  sm: percentScreen(1.75),
-  status_bar: status_bar ? status_bar : 20,
-};
-
-const fontSize = {
-  link: percentScreen(1.75),
-};
-
+// Configuração padrão dos temas
 const themeSettings = {
   spacing,
-  fontSize,
-  deviceSize: {
-    height: percentScreen,
-  },
+  fonts,
 };
+
+// Montagem de tema
 
 const lightTheme = {
   colors: DefaultColors,

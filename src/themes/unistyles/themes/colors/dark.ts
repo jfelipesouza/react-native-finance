@@ -1,4 +1,4 @@
-import {ThemeColors} from './theme';
+import {ThemeColors} from '../../../theme';
 
 const colors: ThemeColors = {
   bg_container: '#fff',

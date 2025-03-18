@@ -1,6 +1,7 @@
 import {theme} from './index';
 
 type AppThemes = typeof theme;
+
 export type ThemeColors = {
   bg_container: string;
   primary: string;
