@@ -5,15 +5,8 @@ import {colors as DarkColors} from './dark';
 const status_bar = StatusBar.currentHeight;
 const {height} = Dimensions.get('window');
 
-const guideLineBaseHeight = 812;
-
-const scale = (size: number) => {
-  return Math.round(
-    PixelRatio.roundToNearestPixel((height / guideLineBaseHeight) * size),
-  );
-};
-
-const percentScreen = (value: number) => (value * height) / 100;
+const percentScreen = (value: number) =>
+  Math.round(PixelRatio.roundToNearestPixel((value * height) / 100));
 
 const spacing = {
   sm: percentScreen(1.75),
@@ -24,24 +17,22 @@ const fontSize = {
   link: percentScreen(1.75),
 };
 
-const lightTheme = {
+const themeSettings = {
   spacing,
   fontSize,
-  colors: DefaultColors,
   deviceSize: {
     height: percentScreen,
   },
-  scale,
+};
+
+const lightTheme = {
+  colors: DefaultColors,
+  ...themeSettings,
 };
 
 const darkTheme = {
-  spacing,
-  fontSize,
   colors: DarkColors,
-  deviceSize: {
-    height: percentScreen,
-  },
-  scale,
+  ...themeSettings,
 };
 
 const theme = {
