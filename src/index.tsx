@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, View} from 'react-native';
+import {ActivityIndicator, StatusBar, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {EntryRouter} from './routers';
@@ -35,6 +35,11 @@ const MyApp: React.FC = () => {
   return (
     <NavigationContainer>
       <EntryRouter />
+      <StatusBar
+        backgroundColor={'transparent'}
+        barStyle={'light-content'}
+        translucent
+      />
     </NavigationContainer>
   );
 };
