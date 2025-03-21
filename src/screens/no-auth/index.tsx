@@ -29,7 +29,9 @@ export const NoAuthEntryScreen = () => {
         <Image source={require('../../assets/imgs/entry.png')} />
       </View>
       <View style={styles.registerContainer}>
-        <Text>{translationText.pt.entry.onboardingTitle}</Text>
+        <Text style={styles.onboardingTitle}>
+          {translationText.pt.entry.onboardingTitle}
+        </Text>
       </View>
     </ScreenWrapper>
   );
@@ -52,5 +54,11 @@ const pageStyles = createStyleSheet(theme => ({
     borderRadius: percentScreen(3),
     borderColor: theme.colors.neutral800,
     padding: theme.spacing.sm,
+  },
+  onboardingTitle: {
+    color: theme.colors.text,
+    fontSize: theme.fonts.size.onboardingTitle,
+    textAlign: 'center',
+    fontStyle: theme.fonts.primary.bold,
   },
 }));

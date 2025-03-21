@@ -1,5 +1,5 @@
 const entrypage = {
-  onboardingTitle: '',
+  onboardingTitle: 'Assuma o controle de suas finanças',
   linkLogin: 'Entre agora',
 };
 
