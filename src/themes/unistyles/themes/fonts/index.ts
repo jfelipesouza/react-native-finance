@@ -7,7 +7,7 @@ export const fonts = {
     ultraBold: '',
   },
   size: {
-    link: percentScreen(1.75),
-    text: percentScreen(2),
+    link: percentScreen(2),
+    text: percentScreen(2.1),
   },
 } as const;

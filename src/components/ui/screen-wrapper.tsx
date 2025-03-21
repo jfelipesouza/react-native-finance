@@ -1,17 +1,24 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, ViewProps} from 'react-native';
+import {createStyleSheet, useStyles} from 'react-native-unistyles';
 
-type ScreenProps = {
+type ScreenProps = ViewProps & {
   children: React.ReactNode;
 };
-export const ScreenWrapper: React.FC<ScreenProps> = ({children}) => {
-  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
+export const ScreenWrapper: React.FC<ScreenProps> = ({children, ...props}) => {
+  const {styles} = useStyles(stylesheet);
+
+  return (
+    <SafeAreaView style={styles.container} {...props}>
+      {children}
+    </SafeAreaView>
+  );
 };
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet(theme => ({
   container: {
     flex: 1,
-    backgroundColor: '#333',
-    paddingTop: 20,
+    backgroundColor: theme.colors.bg_container,
+    paddingTop: theme.spacing.status_bar,
   },
-});
+}));

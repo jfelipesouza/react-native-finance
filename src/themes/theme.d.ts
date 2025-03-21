@@ -1,6 +1,9 @@
-import {themes} from './index';
+import {themes} from './unistyles/themes';
 
-type AppThemes = typeof themes;
+type AppThemes = {
+  light: typeof themes.lightTheme;
+  dark: typeof themes.darkTheme;
+};
 
 export type ThemeColors = {
   bg_container: string;
@@ -28,5 +31,6 @@ export type ThemeColors = {
 };
 
 declare module 'react-native-unistyles' {
+  type AppBreakpoints = typeof breakpoints;
   export interface UnistylesThemes extends AppThemes {}
 }

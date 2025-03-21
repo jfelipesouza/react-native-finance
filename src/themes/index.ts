@@ -1,35 +1,9 @@
-import {StyleSheet} from 'react-native-unistyles';
+import {UnistylesRegistry} from 'react-native-unistyles';
+import {themes} from './unistyles/themes';
 
-import {fonts} from './unistyles/themes/fonts';
-import {DarkColors, DefaultColors} from './unistyles/themes/colors';
-import {spacing} from './unistyles/themes/spacing';
-
-const themeSettings = {
-  spacing,
-  fonts,
-};
-
-const lightTheme = {
-  colors: DefaultColors,
-  ...themeSettings,
-};
-
-const darkTheme = {
-  colors: DarkColors,
-  ...themeSettings,
-};
-
-const themes = {
-  lightTheme,
-  darkTheme,
-};
-
-StyleSheet.configure({
-  settings: {
-    initialTheme: 'lightTheme',
-    adaptiveThemes: true,
-  },
-  themes: themes,
+UnistylesRegistry.addThemes({
+  light: themes.lightTheme,
+  dark: themes.darkTheme,
+}).addConfig({
+  initialTheme: 'dark',
 });
-
-export {themes};

@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, StatusBar, View} from 'react-native';
+import {ActivityIndicator, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-
 import {EntryRouter} from './routers';
+import {ScreenWrapper} from './components/ui/screen-wrapper';
 
+import './themes';
 const MyApp: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState<string | null>(null);
@@ -22,9 +23,9 @@ const MyApp: React.FC = () => {
 
   if (loading) {
     return (
-      <View style={{flex: 1, backgroundColor: '#fff'}}>
+      <ScreenWrapper>
         <ActivityIndicator />
-      </View>
+      </ScreenWrapper>
     );
   }
 
