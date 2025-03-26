@@ -1,12 +1,14 @@
 import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
-import {Image, Text, View} from 'react-native';
-
-import {ScreenWrapper} from '../../components/ui/screen-wrapper';
+import {Image, TouchableOpacity, View} from 'react-native';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
-import {Link} from '../../components/ui/link-button';
+import Animated from 'react-native-reanimated';
+
 import {percentScreen} from '../../themes/unistyles/functions/screen-percent';
+import {ScreenWrapper} from '../../components/ui/screen-wrapper';
+import {Link} from '../../components/ui/link-button';
+import {Typo} from '../../components/ui/typography';
 import {translationText} from '../../services/i18n/locales';
 
 export const NoAuthEntryScreen = () => {
@@ -17,6 +19,7 @@ export const NoAuthEntryScreen = () => {
   };
 
   const {styles} = useStyles(pageStyles);
+
   return (
     <ScreenWrapper>
       <View style={styles.horizontal}>
@@ -28,11 +31,23 @@ export const NoAuthEntryScreen = () => {
       <View style={styles.imageContainer}>
         <Image source={require('../../assets/imgs/entry.png')} />
       </View>
-      <View style={styles.registerContainer}>
-        <Text style={styles.onboardingTitle}>
+      <Animated.View style={styles.registerContainer}>
+        <Typo style={styles.onboardingTextCenter} variants={'h1'}>
           {translationText.pt.entry.onboardingTitle}
-        </Text>
-      </View>
+        </Typo>
+        <Typo
+          style={[styles.onboardingTextCenter, styles.onbardingDescription]}
+          variants="p">
+          {translationText.pt.entry.onboardingDescription}
+        </Typo>
+        <TouchableOpacity
+          onPress={() => goScreen('register')}
+          style={styles.button}>
+          <Typo style={styles.buttonText}>
+            {translationText.pt.entry.onboardingActionButton}
+          </Typo>
+        </TouchableOpacity>
+      </Animated.View>
     </ScreenWrapper>
   );
 };
@@ -44,21 +59,34 @@ const pageStyles = createStyleSheet(theme => ({
     paddingHorizontal: theme.spacing.sm,
   },
   imageContainer: {
-    flex: 2,
+    flex: 1.8,
     alignItems: 'center',
     justifyContent: 'center',
   },
   registerContainer: {
     flex: 1,
-    borderWidth: 1,
-    borderRadius: percentScreen(3),
-    borderColor: theme.colors.neutral800,
+    borderTopLeftRadius: percentScreen(3),
+    borderTopRightRadius: percentScreen(3),
     padding: theme.spacing.sm,
+    backgroundColor: theme.colors.neutral700,
+    justifyContent: 'center',
   },
-  onboardingTitle: {
-    color: theme.colors.text,
-    fontSize: theme.fonts.size.onboardingTitle,
+  onboardingTextCenter: {
     textAlign: 'center',
-    fontStyle: theme.fonts.primary.bold,
+  },
+  onbardingDescription: {
+    color: theme.colors.neutral350,
+  },
+  button: {
+    backgroundColor: '#008080',
+    marginTop: theme.spacing.sm,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: theme.spacing.sm,
+    borderRadius: theme.spacing.lg * 1.5,
+  },
+  buttonText: {
+    fontFamily: theme.fonts.primary.bold,
+    fontSize: theme.fonts.size.h4,
   },
 }));

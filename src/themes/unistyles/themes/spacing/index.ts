@@ -7,7 +7,7 @@ const spacing = {
   sm: percentScreen(1.75),
   md: percentScreen(2),
   lg: percentScreen(2.5),
-  status_bar: status_bar ? status_bar : 20,
+  status_bar: status_bar ? status_bar + 10 : 30,
 } as const;
 
 export {spacing};
