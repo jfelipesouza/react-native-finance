@@ -2,7 +2,7 @@ import {ThemeColors} from '../../../theme';
 
 const colors: ThemeColors = {
   bg_container: '#ffffff',
-  primary: '#65a30d',
+  primary: '#008080',
   primaryLight: '#0284c7',
   primaryDark: '#075985',
   text: '#000000',

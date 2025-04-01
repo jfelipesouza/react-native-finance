@@ -3,11 +3,11 @@ import {TouchableOpacity, View} from 'react-native';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 
 import {ScreenWrapper} from '../../components/ui/screen-wrapper';
-import {BackButton} from '../../components/back-button';
 import {Typo} from '../../components/ui/typography';
 import {Input} from '../../components/ui/input';
 import {translationText} from '../../services/i18n/locales';
 import {Link} from '../../components/ui/link-button';
+import {HeaderBackButton} from '../../components/back-button/header-back';
 
 export const LoginScreen = () => {
   const {styles} = useStyles(loginStyles);
@@ -16,9 +16,7 @@ export const LoginScreen = () => {
 
   return (
     <ScreenWrapper>
-      <View style={styles.header}>
-        <BackButton />
-      </View>
+      <HeaderBackButton />
       <View style={styles.content}>
         <View style={styles.headerTextContainer}>
           <Typo variants={'h1'}>{texts.hi}</Typo>
@@ -99,7 +97,7 @@ const loginStyles = createStyleSheet(theme => ({
     marginVertical: theme.spacing.md,
   },
   link: {
-    backgroundColor: '#008080',
+    backgroundColor: theme.colors.primary,
     paddingVertical: 12,
     alignItems: 'center',
     borderRadius: 12,

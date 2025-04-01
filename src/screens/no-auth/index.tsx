@@ -78,7 +78,7 @@ const pageStyles = createStyleSheet(theme => ({
     color: theme.colors.neutral350,
   },
   button: {
-    backgroundColor: '#008080',
+    backgroundColor: theme.colors.primary,
     marginTop: theme.spacing.sm,
     alignItems: 'center',
     justifyContent: 'center',
