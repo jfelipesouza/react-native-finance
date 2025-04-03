@@ -5,7 +5,7 @@ type RequestLoginFormData = {
   password: string;
 };
 
-export const handleLogin = async ({email, password}: RequestLoginFormData) => {
+export const loginUser = async ({email, password}: RequestLoginFormData) => {
   const router = 'login';
 
   try {
