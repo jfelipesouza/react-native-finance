@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 
 import {NoAuthEntryScreen} from '../../screens/no-auth';
 import {LoginScreen} from '../../screens/no-auth/login';
@@ -12,6 +12,7 @@ export const EntryRouter = () => {
     <Navigator
       screenOptions={{
         headerShown: false,
+        ...TransitionPresets.SlideFromRightIOS,
       }}>
       <Screen name={'entry'} component={NoAuthEntryScreen} />
       <Screen name={'login'} component={LoginScreen} />
