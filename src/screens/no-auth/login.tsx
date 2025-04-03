@@ -8,11 +8,16 @@ import {Input} from '../../components/ui/input';
 import {translationText} from '../../services/i18n/locales';
 import {Link} from '../../components/ui/link-button';
 import {HeaderBackButton} from '../../components/back-button/header-back';
+import {loginUser} from '../../services/auth/actions/login';
 
 export const LoginScreen = () => {
   const {styles} = useStyles(loginStyles);
 
   const texts = translationText.pt.login;
+
+  const handleSubmitForm = () => {
+    loginUser({email: 'joe.doe@teste.com', password: 'sasuke12'});
+  };
 
   return (
     <ScreenWrapper>
@@ -40,7 +45,7 @@ export const LoginScreen = () => {
               <Link href={() => {}} title={texts.forms.rememberPass} />
             </View>
 
-            <TouchableOpacity style={styles.link}>
+            <TouchableOpacity style={styles.link} onPress={handleSubmitForm}>
               <Typo variants="p" style={styles.linkText}>
                 {texts.forms.submitButton}
               </Typo>
@@ -48,6 +53,7 @@ export const LoginScreen = () => {
           </View>
 
           <View style={styles.divisionLine} />
+
           <TouchableOpacity style={styles.link}>
             <Typo variants="p" style={styles.linkText}>
               {texts.gmail}
